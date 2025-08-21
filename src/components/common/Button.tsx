@@ -24,7 +24,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`w-[106px] h-9 rounded-md font-montserrat  cursor-pointer transition ${className}`}
+      className={`w-[106px] h-9  font-montserrat  cursor-pointer transition ${className}`}
     >
       {label}
       {iconSrc && (

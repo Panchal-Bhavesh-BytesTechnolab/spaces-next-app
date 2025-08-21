@@ -1,12 +1,12 @@
 import HeroSection from "./_components/HeroSection";
-import Section2 from "./_components/Section2";
-import Section3 from "./_components/Section3";
+import ExploreSection from "./_components/ExploreSection";
+import Section3 from "./_components/ServiceSection";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <Section2 />
+      <ExploreSection />
       <Section3 />
       {/* Add more sections here as needed */}
     </>

@@ -4,7 +4,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 @theme {
@@ -14,6 +13,7 @@ body {
   --color-orange-dark: #f7931e;
   --color-light-gray: #5f5f5f;
   --color-border-gary: #00000033;
+  --color-gray: #1e1e1e;
   --z-index: 999;
   --padding-top: 18vw;
   --padding-bottom: 20vw;
@@ -23,4 +23,12 @@ body {
   width: 100%;
   max-width: 83.75vw;
   margin: 0 auto;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -17,7 +17,7 @@ const HeroSection: React.FC = () => {
       />
       <div className="absolute inset-0 bg-black/40" />
       <div className="container sm:mx-auto mx-5 relative">
-        <div className="pt-[40vw] xl:pt-[18vw] pb-[20vw] flex flex-col items-center justify-center overflow-hidden">
+        <div className="pt-[40vw] xl:pt-[18vw] flex flex-col items-center justify-center overflow-hidden">
           <div className="w-full max-w-[1033px] text-center">
             <h1 className="font-bold font-inter text-[30px] sm:text-[55px] text-white leading-tight">
               Find Your Perfect <br className="hidden sm:block" /> Event Space

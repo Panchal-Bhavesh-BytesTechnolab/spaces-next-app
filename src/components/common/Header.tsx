@@ -60,11 +60,11 @@ const Header: React.FC = () => {
           <div className="hidden lg:flex items-center gap-2.5">
             <Button
               label="Log In"
-              className="bg-purpule-dark text-white font-semibold text-base hover:bg-purpule-light"
+              className="bg-purpule-dark text-white font-semibold text-base hover:bg-purpule-light rounded-md"
             />
             <Button
               label="Sign Up"
-              className="bg-orange-dark text-white font-semibold text-base hover:bg-orange-300"
+              className="bg-orange-dark text-white font-semibold text-base hover:bg-orange-300 rounded-md"
             />
           </div>
 
@@ -143,11 +143,11 @@ const Header: React.FC = () => {
             <div className="flex items-center gap-2.5 mt-5">
               <Button
                 label="Log In"
-                className="bg-purpule-dark text-white font-semibold text-base"
+                className="bg-purpule-dark text-white font-semibold text-base rounded-md"
               />
               <Button
                 label="Sign Up"
-                className="bg-orange-dark text-white font-semibold text-base"
+                className="bg-orange-dark text-white font-semibold text-base rounded-md"
               />
             </div>
           </ul>
