@@ -1,14 +1,19 @@
 import HeroSection from "./_components/HeroSection";
 import ExploreSection from "./_components/ExploreSection";
-import Section3 from "./_components/ServiceSection";
+import ServiceSection from "./_components/ServiceSection";
+import QASection from "./_components/QASection";
+import MemoriesSection from "./_components/MemoriesSection";
+import TestimonialSection from "./_components/TestimonialSection";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
       <ExploreSection />
-      <Section3 />
-      {/* Add more sections here as needed */}
+      <ServiceSection />
+      <QASection />
+      <MemoriesSection />
+      <TestimonialSection />
     </>
   );
 }

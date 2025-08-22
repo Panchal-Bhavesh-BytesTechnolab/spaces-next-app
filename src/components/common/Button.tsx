@@ -5,7 +5,7 @@ import Image from "next/image";
 type ButtonProps = {
   label?: string;
   alt?: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   className?: string;
   iconSrc?: string;
   iconWidth?: number;

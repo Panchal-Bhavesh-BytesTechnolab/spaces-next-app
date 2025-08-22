@@ -73,7 +73,7 @@ const ServiceSection: React.FC = () => {
             iconSrc={Images.Rigth_Arrow}
             iconWidth={20}
             iconHeight={20}
-            className="rounded-full bg-purpule-light text-white font-semibold py-5 px-8  shadow-lg transition-all hover:bg-purple-700 w-[242px] flex justify-center items-center gap-2 cursor-pointer "
+            className="rounded-full xl:rounded-md bg-purpule-light text-white font-semibold md:py-5 py-[22px] md:px-8 pl-[47px] md:pl-0 pr-[27px] md:pr-0 shadow-lg transition-all hover:bg-purple-700 w-[242px] flex justify-center items-center gap-2 cursor-pointer"
           />
         </div>
       </div>

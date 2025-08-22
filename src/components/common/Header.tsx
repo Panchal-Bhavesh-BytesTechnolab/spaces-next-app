@@ -69,22 +69,17 @@ const Header: React.FC = () => {
           </div>
 
           {!isMenuOpen && (
-            <Link
-              href="#"
+            <Button
               onClick={(e) => {
                 e.preventDefault();
                 toggleMenu();
               }}
-              className="2xl:hidden block"
-            >
-              <Image
-                src={Images.Hamburger}
-                alt="Open Menu"
-                width={30}
-                height={30}
-                className="cursor-pointer"
-              />
-            </Link>
+              iconSrc={Images.Hamburger}
+              alt="Open Menu"
+              iconWidth={30}
+              iconHeight={30}
+              className="2xl:hidden block bg-transparent p-0 w-auto h-auto"
+            />
           )}
         </div>
       </div>
@@ -95,22 +90,17 @@ const Header: React.FC = () => {
         }`}
       >
         <div className="relative px-6 pt-6 pb-10">
-          <Link
-            href="#"
+          <Button
             onClick={(e) => {
               e.preventDefault();
               toggleMenu();
             }}
-            className="absolute top-6 right-6"
-          >
-            <Image
-              src={Images.Cancel}
-              alt="Close Menu"
-              width={24}
-              height={24}
-              className="cursor-pointer"
-            />
-          </Link>
+            iconSrc={Images.Cancel}
+            iconHeight={24}
+            iconWidth={24}
+            alt="Close Menu"
+            className="absolute top-6 right-6 cursor-pointer p-0 w-auto h-auto"
+          />
 
           <div className="mb-8">
             <Image

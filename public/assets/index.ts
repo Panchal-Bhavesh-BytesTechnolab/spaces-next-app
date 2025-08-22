@@ -23,6 +23,13 @@ import Service_Section_Fifth from "./images/Service_Section_Fifth.png";
 import Service_Section_Sixth from "./images/Servive_Section_sixth.png";
 import Service_Section_Design_First from "./images/Service_Section_Design_First.png";
 import Service_Section_Design_Second from ".//images/Service_Section_Design_Second.png";
+import QA_Section_Image from "./images/QASection_Image.png";
+import QA_Section_Image_Second from "./images/QASection_Image_Second.png";
+import Memories_Section_Design from "./images/Memories_Section_Design.png";
+import Memories_Section_First from "./images/Memories_Section_Image.png";
+import Memories_Section_Second from "./images/Memories_Section_Image_Second.png";
+import Right_Arrow_Section_Black from "./icons/Right_Arrow_Black.svg";
+import Testimonial_Section_First from "./images/Testimonial_Image.png";
 export const Images = {
   Logo,
   Hero_Section,
@@ -49,4 +56,11 @@ export const Images = {
   Service_Section_Sixth,
   Service_Section_Design_First,
   Service_Section_Design_Second,
+  QA_Section_Image,
+  QA_Section_Image_Second,
+  Memories_Section_Design,
+  Memories_Section_First,
+  Memories_Section_Second,
+  Right_Arrow_Section_Black,
+  Testimonial_Section_First,
 };
