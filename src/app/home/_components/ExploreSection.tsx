@@ -103,7 +103,7 @@ const ExploreSection: React.FC = () => {
               {events.map((event) => (
                 <div
                   key={event.id}
-                  className="embla__slide flex-[0_0_100%] sm:flex-[0_0_50%] md:flex-[0_0_33.333%] lg:flex-[0_0_25%] min-w-0 px-2"
+                  className="embla__slide flex-[0_0_80%] sm:flex-[0_0_50%] md:flex-[0_0_33.333%] lg:flex-[0_0_25%] min-w-0 px-2"
                 >
                   <div className="w-full h-full flex justify-center">
                     <ImageCard {...event} />

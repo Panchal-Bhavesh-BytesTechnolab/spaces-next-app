@@ -1,5 +1,5 @@
 import Header from "@/components/common/Header";
-// import Footer from "@/components/common/Footer";
+import Footer from "@/components/common/Footer";
 
 export default function AuthLayout({
   children,
@@ -10,7 +10,7 @@ export default function AuthLayout({
     <>
       <Header />
       <main>{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

@@ -13,7 +13,7 @@ const Header: React.FC = () => {
 
   return (
     <header className="w-full fixed top-0 z-[999] shadow-lg backdrop-blur bg-white-light/70 h-[66px]">
-      <div className="container mx-auto px-5 flex items-center justify-between relative h-full">
+      <div className="container mx-auto md:px-5 flex items-center justify-between relative h-full">
         <div className="flex items-center relative z-10">
           <div className="fixed -left-5 top-0 -z-10">
             <Image
@@ -22,21 +22,21 @@ const Header: React.FC = () => {
               height={320}
               alt="Background"
               priority
-              className="sm:w-[450px] sm:h-[320px] w-[286px] h-[150px]"
+              className="lg:w-[450px] lg:h-[300px] md:w-[400px] md:h-[270px] w-[250px] h-[150px]"
             />
           </div>
-          <div className="sm:mt-[80px] mt-[30px] ml-[40px] sm:ml-[0px]">
+          <div className="md:mt-[80px] mt-[30px] ml-[40px] md:ml-[0px]">
             <Image
               src={Images.Logo}
               alt="Seak Spaces Logo"
               width={193.85}
               height={101}
               priority
-              className="sm:w-[193.85px] sm:h-[101px] w-[91.43px] h-[48px] cursor-pointer"
+              className="md:w-[193.85px] md:h-[101px] w-[91.43px] h-[48px] cursor-pointer"
             />
           </div>
         </div>
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-2.5 lg:gap-4">
           <nav className="hidden 2xl:flex relative z-10 items-center gap-10">
             <ul className="flex items-center gap-8">
               {Menu.map((data) => (
@@ -69,17 +69,26 @@ const Header: React.FC = () => {
           </div>
 
           {!isMenuOpen && (
-            <Button
-              onClick={(e) => {
-                e.preventDefault();
-                toggleMenu();
-              }}
-              iconSrc={Images.Hamburger}
-              alt="Open Menu"
-              iconWidth={30}
-              iconHeight={30}
-              className="2xl:hidden block bg-transparent p-0 w-auto h-auto"
-            />
+            <>
+              <Button
+                iconSrc={Images.Person}
+                alt="Open Menu"
+                iconWidth={30}
+                iconHeight={30}
+                className="2xl:hidden block bg-transparent p-0 w-auto h-auto"
+              />
+              <Button
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleMenu();
+                }}
+                iconSrc={Images.Hamburger}
+                alt="Open Menu"
+                iconWidth={30}
+                iconHeight={30}
+                className="2xl:hidden block bg-transparent p-0 w-auto h-auto"
+              />
+            </>
           )}
         </div>
       </div>
