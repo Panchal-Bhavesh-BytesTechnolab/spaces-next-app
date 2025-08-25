@@ -17,6 +17,9 @@ body {
   --color-gray-footer: #eaeaea;
   --color-gray-line: #d9d9d9;
   --color-gray-lightest: #c0c0c0;
+  --color-gray-dark: #181818;
+  --color-base-black: #161616;
+  --color-blue-primary: #7300f1;
   --z-index: 999;
   --padding-top: 18vw;
   --padding-bottom: 20vw;

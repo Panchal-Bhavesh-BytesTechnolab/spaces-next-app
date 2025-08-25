@@ -6,7 +6,12 @@ import { Images } from "../../../public/assets/index";
 import { Menu } from "@/constant/NavbarConstant";
 import Button from "@/components/common/Button";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onLoginClick: () => void;
+  onSignUpClick: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onLoginClick, onSignUpClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -60,10 +65,12 @@ const Header: React.FC = () => {
           <div className="hidden lg:flex items-center gap-2.5">
             <Button
               label="Log In"
+              onClick={onLoginClick}
               className="bg-purpule-dark text-white font-semibold text-base hover:bg-purpule-light rounded-md"
             />
             <Button
               label="Sign Up"
+              onClick={onSignUpClick}
               className="bg-orange-dark text-white font-semibold text-base hover:bg-orange-300 rounded-md"
             />
           </div>
@@ -142,10 +149,12 @@ const Header: React.FC = () => {
             <div className="flex items-center gap-2.5 mt-5">
               <Button
                 label="Log In"
+                onClick={onSignUpClick}
                 className="bg-purpule-dark text-white font-semibold text-base rounded-md"
               />
               <Button
                 label="Sign Up"
+                onClick={onSignUpClick}
                 className="bg-orange-dark text-white font-semibold text-base rounded-md"
               />
             </div>
