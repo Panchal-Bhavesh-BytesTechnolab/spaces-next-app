@@ -62,7 +62,7 @@ export default function SignIn({ onSignUp, onClose }: SignInProps) {
             </>
           }
           iconPosition="left"
-          className="w-full sm:w-auto h-auto flex items-center justify-center gap-[13px] py-4 pl-[43px] pr-[47px] border border-light-gray/50 rounded-[5px] text-light-gray font-bold hover:border-light-gray"
+          className="w-full xs:w-auto h-auto flex items-center justify-center gap-[13px] py-2 md:py-4 pl-7 md:pl-[43px] pr-7 md:pr-[47px] border border-light-gray/50 rounded-[5px] text-light-gray font-bold hover:border-light-gray"
         />
         <Button
           iconSrc={Images.Facebook_New_Icon}
@@ -74,7 +74,7 @@ export default function SignIn({ onSignUp, onClose }: SignInProps) {
             </>
           }
           iconPosition="left"
-          className="w-full sm:w-auto h-auto flex items-center justify-center gap-[13px] py-4 pl-[43px] pr-[47px] border border-light-gray/50 rounded-[5px] text-light-gray font-bold hover:border-light-gray"
+          className="w-full sm:w-auto h-auto flex items-center justify-center gap-[13px] py-2 md:py-4 pl-7 md:pl-[43px] pr-7 md:pr-[47px] border border-light-gray/50 rounded-[5px] text-light-gray font-bold hover:border-light-gray"
         />
       </div>
       <Button

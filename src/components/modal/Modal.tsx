@@ -14,7 +14,7 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
 
   return (
     <div className="fixed inset-0 z-999 flex items-center justify-center bg-black/70">
-      <div className="relative bg-white rounded-xl shadow-lg w-full max-w-lg md:max-w-4xl max-h-[95vh] md:max-h-[80vh] p-10 md:p-8 overflow-y-auto">
+      <div className="relative bg-white rounded-xl shadow-lg w-full max-w-[270px] sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl max-h-[80vh] p-10 md:p-8 overflow-y-auto">
         <Button
           onClick={onClose}
           iconSrc={Images.Close_Icon}

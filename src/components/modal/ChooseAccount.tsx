@@ -7,10 +7,14 @@ import { accountOptions } from "@/constant/ChooseAccount";
 import Button from "../common/Button";
 
 interface ChooseAccountProps {
-  onSignIn: () => void;
+  onSelectRole: (role: string, action: "signin" | "signup") => void;
+  nextAction: "signin" | "signup";
 }
 
-export default function ChooseAccount({ onSignIn }: ChooseAccountProps) {
+export default function ChooseAccount({
+  onSelectRole,
+  nextAction,
+}: ChooseAccountProps) {
   return (
     <div className="text-center flex flex-col justify-center items-center">
       <h2 className="font-bold text-lg md:text-[25px] text-black">
@@ -24,11 +28,11 @@ export default function ChooseAccount({ onSignIn }: ChooseAccountProps) {
         {accountOptions.map((option) => (
           <button
             key={option.id}
-            onClick={onSignIn}
+            onClick={() => onSelectRole(option.id, nextAction)}
             className="flex items-center justify-between gap-[33px] p-4 rounded-xl shadow-xl hover:shadow-md hover:bg-gray-50 cursor-pointer transition w-full"
           >
             <div className="flex items-center justify-between gap-[34px]">
-              <div className="w-[114px] h-[122px] relative rounded-md overflow-hidden">
+              <div className="hidden md:block w-[114px] h-[122px] relative rounded-md overflow-hidden">
                 <Image
                   src={option.image}
                   alt={option.title}
@@ -38,27 +42,28 @@ export default function ChooseAccount({ onSignIn }: ChooseAccountProps) {
               </div>
 
               <div className="text-left">
-                <p className="font-bold text-base md:text-[25px] text-base-black">
+                <p className="font-bold text-[18px] md:text-[25px] text-base-black">
                   {option.title}
                 </p>
-                <p className="font-inter font-normal text-lg text-light-gray">
+                <p className="font-inter font-normal text-base md:text-lg text-light-gray">
                   {option.description}
                 </p>
               </div>
             </div>
-            <div className="flex-shrink-0 w-[50px] h-[50px] flex items-center justify-center rounded-full bg-gradient-to-b from-[#FEB25C] to-[#EE4B8F] text-white">
+            <div className="flex-shrink-0 w-[30px] md:w-[50px] h-[30px] md:h-[50px] flex items-center justify-center rounded-full bg-gradient-to-b from-[#FEB25C] to-[#EE4B8F] text-white">
               <Image
                 src={Images.Right_Arrow_White}
                 alt="click to login"
                 width={22}
                 height={17}
+                className="w-[15px] md:w-[22px]"
               />
             </div>
           </button>
         ))}
       </div>
       <div className="mt-[45px] flex items-center justify-center flex-col">
-        <p className="font-inter font-normal text-[11px] text-black">
+        <p className="font-inter font-normal text-base md:text-[11px] text-black">
           SeakSpaces is currently limited to the following states:
         </p>
         <Link

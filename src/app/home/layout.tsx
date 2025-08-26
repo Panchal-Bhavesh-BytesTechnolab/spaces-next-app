@@ -5,77 +5,61 @@ import Modal from "@/components/modal/Modal";
 import ChooseAccount from "@/components/modal/ChooseAccount";
 import SignIn from "@/components/modal/SignIn";
 import SignUp from "@/components/modal/SignUp";
-import { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
 
 export default function AuthLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const router = useRouter();
-  const searchParams = useSearchParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<React.ReactNode>(null);
 
-  useEffect(() => {
-    const modalParam = searchParams.get("modal");
-    if (modalParam) {
-      setIsModalOpen(true);
-      switch (modalParam) {
-        case "chooseaccount":
-          setModalContent(<ChooseAccount onSignIn={openSignIn} />);
-          break;
-        case "signin":
-          setModalContent(
-            <SignIn onSignUp={openSignUp} onClose={closeModal} />
-          );
-          break;
-        case "signup":
-          setModalContent(
-            <SignUp onSignIn={openSignIn} onClose={closeModal} />
-          );
-          break;
-        default:
-          setModalContent(null);
-          setIsModalOpen(false);
-      }
-    } else {
-      setIsModalOpen(false);
-      setModalContent(null);
-    }
-  }, [searchParams]);
-
-  const openChooseAccount = () => {
+  const openChooseAccount = (nextAction: "signin" | "signup") => {
     setIsModalOpen(true);
-    setModalContent(<ChooseAccount onSignIn={openSignIn} />);
-    router.push("/home?modal=chooseaccount");
+    setModalContent(
+      <ChooseAccount
+        onSelectRole={(role, action) => handleRoleSelection(role, action)}
+        nextAction={nextAction}
+      />
+    );
+  };
+
+  const handleRoleSelection = (
+    role: string,
+    nextAction: "signin" | "signup"
+  ) => {
+    if (nextAction === "signin") {
+      setModalContent(<SignIn onSignUp={openSignUp} onClose={closeModal} />);
+    } else {
+      setModalContent(<SignUp onSignIn={openSignIn} onClose={closeModal} />);
+    }
   };
 
   const openSignIn = () => {
     setModalContent(<SignIn onSignUp={openSignUp} onClose={closeModal} />);
-    router.push("/home?modal=signin");
+    setIsModalOpen(true);
   };
 
   const openSignUp = () => {
     setModalContent(<SignUp onSignIn={openSignIn} onClose={closeModal} />);
-    router.push("/home?modal=signup");
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setModalContent(null);
-    router.push("/home");
   };
 
   return (
     <>
       <Header
-        onLoginClick={openChooseAccount}
-        onSignUpClick={openChooseAccount}
+        onLoginClick={() => openChooseAccount("signin")}
+        onSignUpClick={() => openChooseAccount("signup")}
       />
       <main>{children}</main>
       <Footer />
+
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         {modalContent}
       </Modal>

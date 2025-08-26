@@ -31,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
       {iconPosition === "left" && iconSrc && (
         <Image src={iconSrc} alt={alt} width={iconWidth} height={iconHeight} />
       )}
-      {label && <span>{label}</span>}
+      {label}
       {iconPosition === "right" && iconSrc && (
         <Image src={iconSrc} alt={alt} width={iconWidth} height={iconHeight} />
       )}
