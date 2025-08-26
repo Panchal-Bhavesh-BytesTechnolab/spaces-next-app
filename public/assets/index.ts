@@ -30,6 +30,16 @@ import Memories_Section_First from "./images/Memories_Section_Image.png";
 import Memories_Section_Second from "./images/Memories_Section_Image_Second.png";
 import Right_Arrow_Section_Black from "./icons/Right_Arrow_Black.svg";
 import Testimonial_Section_First from "./images/Testimonial_Image.png";
+import Speaker_Image from "./images/Speaker_Image.png";
+import Host_Image from "./images/Host_Image.png";
+import Vendor_Image from "./images/Vendor_Image.png";
+import Close_Icon from "./icons/Close_icon.svg";
+import Right_Arrow_White from "./icons/Rigth_Arrow_white.svg";
+import Google_Icon from "./icons/google.svg";
+import Facebook_New_Icon from "./icons/facebook_new.svg";
+import Eye_Off from "./icons/eye-off.svg";
+import Eye_Show from "./icons/eye-show.svg";
+import Check_Icon from "./icons/Check_Icon.svg";
 export const Images = {
   Logo,
   Hero_Section,
@@ -63,4 +73,14 @@ export const Images = {
   Memories_Section_Second,
   Right_Arrow_Section_Black,
   Testimonial_Section_First,
+  Speaker_Image,
+  Host_Image,
+  Vendor_Image,
+  Close_Icon,
+  Right_Arrow_White,
+  Google_Icon,
+  Facebook_New_Icon,
+  Eye_Off,
+  Eye_Show,
+  Check_Icon,
 };
