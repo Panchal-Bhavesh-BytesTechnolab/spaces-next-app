@@ -11,7 +11,7 @@ interface SignInProps {
   onClose: () => void;
 }
 
-export default function SignIn({ onSignIn, onClose }: SignInProps) {
+export default function SignIn({ onSignIn }: SignInProps) {
   const handleSignInClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     onSignIn();

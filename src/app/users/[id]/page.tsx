@@ -1,17 +1,17 @@
 import UserModalClient from "./UserModalClient";
+import NotFound from "@/app/not-found";
+
+type User = {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  gender: string;
+  city: string;
+  createdAt: string;
+};
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL as string;
-
-async function fetchUser(id: string) {
-  try {
-    const res = await fetch(`${BASE_URL}/users/${id}`, { cache: "no-store" });
-    if (!res.ok) throw new Error("Failed to fetch user");
-    return res.json();
-  } catch (error) {
-    console.error("Error in fetchUser:", error);
-    return null;
-  }
-}
 
 export default async function UserModalPage({
   params,
@@ -22,19 +22,30 @@ export default async function UserModalPage({
   const user = await fetchUser(id);
 
   if (!user) {
-    return (
-      <UserModalClient
-        user={{
-          firstName: "Not",
-          lastName: "Found",
-          email: "",
-          gender: "",
-          city: "",
-          createdAt: new Date().toISOString(),
-        }}
-      />
-    );
+    return <NotFound />;
   }
 
   return <UserModalClient user={user} />;
+}
+
+async function fetchUser(id: string) {
+  try {
+    const res = await fetch(`${BASE_URL}/users/${id}`, {
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) throw new Error("Failed to fetch user");
+    return res.json();
+  } catch (error) {
+    console.error("Error in fetchUser:", error);
+    return null;
+  }
+}
+
+export async function generateStaticParams() {
+  const res = await fetch(`${BASE_URL}/users`);
+  const users: User[] = await res.json();
+  const params = users.map((user) => ({
+    id: user.id,
+  }));
+  return params;
 }

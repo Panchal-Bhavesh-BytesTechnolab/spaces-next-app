@@ -3,7 +3,17 @@
 import Modal from "@/components/modal/Modal";
 import { useRouter } from "next/navigation";
 
-export default function UserModalClient({ user }: { user: any }) {
+type User = {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  gender: string;
+  city: string;
+  createdAt: string;
+};
+
+export default function UserModalClient({ user }: { user: User }) {
   const router = useRouter();
 
   return (

@@ -1,9 +1,8 @@
 "use client";
-const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL as string;
-
 import React, { useState } from "react";
 import FormInputField from "@/components/form/form-elements/FormInputField";
 import Button from "@/components/common/Button";
+import { addUser } from "./actions";
 
 const AddUser = () => {
   const [formData, setFormData] = useState({
@@ -28,21 +27,7 @@ const AddUser = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(`${BASE_URL}/users`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!res.ok) {
-        throw new Error("Failed to add user");
-      }
-
-      const data = await res.json();
-      console.log("User added:", data);
-
+      await addUser(formData);
       setFormData({
         firstName: "",
         lastName: "",

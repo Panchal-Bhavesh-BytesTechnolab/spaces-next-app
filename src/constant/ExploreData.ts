@@ -1,6 +1,19 @@
 import { Images } from "../../public/assets/index";
+import { StaticImageData } from "next/image";
 
-export const categories = [
+export type Category = {
+  id: number;
+  name: string;
+};
+
+export type EventItem = {
+  id: number;
+  title: string;
+  subtitle: string;
+  image: string | StaticImageData;
+};
+
+export const categories: Category[] = [
   { id: 1, name: "Party Event" },
   { id: 2, name: "Wedding Events" },
   { id: 3, name: "Studio Spaces" },
@@ -9,7 +22,7 @@ export const categories = [
   { id: 6, name: "Creative Venues" },
 ];
 
-export const eventsByCategory: Record<string, any[]> = {
+export const eventsByCategory: Record<string, EventItem[]> = {
   "Party Event": [
     {
       id: 1,
